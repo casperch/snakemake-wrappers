@@ -2,8 +2,8 @@ rule filter_vcf:
     input:
         "{sample}.vcf"
     output:
-        "{sample}.filtered.vcf"
+        "{sample}.bed"
     params:
-        extra="--chr 1 --recode-INFO-all"
+        extra=""
     wrapper:
-        "master/bio/vcftools/filter"
+        "master/bio/vcftools/plink"
