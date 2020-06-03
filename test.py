@@ -43,7 +43,7 @@ def run(wrapper, cmd, check_log=None):
         os.chdir(testdir)
         if os.path.exists(".snakemake"):
             shutil.rmtree(".snakemake")
-        cmd = cmd + ["--wrapper-prefix", "file://{}/".format(d), "--conda-cleanup-pkgs"]
+        cmd = cmd + ["--wrapper-prefix", "file://{}/".format(d), "--cleanup-conda"] # --conda-cleanup-pkgs
         subprocess.check_call(["snakemake", "--version"])
 
         try:
@@ -1886,4 +1886,10 @@ def test_vep_annotate():
     run(
         "bio/vep/annotate",
         ["snakemake", "--cores", "1", "variants.annotated.bcf", "--use-conda", "-F"],
+    )
+
+def test_mapdamage():
+    run(
+        "bio/mapdamage",
+        ["snakemake", "--cores", "1", "a.bcf.csi", "--use-conda", "-F"],
     )

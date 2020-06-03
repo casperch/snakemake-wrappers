@@ -1,0 +1,10 @@
+rule mapdamage:
+    input:
+        bam="a.bam",
+        ref="genome.fasta"
+    output:        
+        directory("result")
+    params:        
+        extra=""  # optional parameters for mapdamage
+    wrapper:
+        "file:///mnt/f/pipeline/snakemake-wrappers/bio/mapdamage"
