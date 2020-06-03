@@ -1307,6 +1307,13 @@ def test_vcftoolsfilter():
     )
 
 
+def test_vcftoolsplink():
+    run(
+        "bio/vcftools/plink",
+        ["snakemake", "--cores", "1", "sample.bed", "--use-conda", "-F"],
+    )
+
+
 def test_gatk_baserecalibrator():
     run(
         "bio/gatk/baserecalibrator",
