@@ -1,0 +1,4 @@
+name: vcftools plink
+description: Vcf files convert plink using vcftools
+authors:
+  - Jae-Pil Choi
