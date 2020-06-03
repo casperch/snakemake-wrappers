@@ -1,0 +1,12 @@
+rule plink:
+    input:
+        'mds/ped/' + prefix + '.ped',
+        'mds/ped/' + prefix + '.map'
+    output:
+        'mds/bed/' + prefix + '.bed',
+        'mds/bed/' + prefix + '.bim',
+        'mds/bed/' + prefix + '.fam',
+        'mds/bed/' + prefix + '.log'
+    params: extra=""
+    wrapper:
+        "master/bio/plink"
