@@ -1,0 +1,25 @@
+rule angsd_dosaf:
+    input:
+        # bam file list oneline one file
+        bamlist="{sample}.list",
+        # path to reference genome
+        ancestral="genome.fasta",
+    output:
+        # arg file
+        arg="dosaf/{sample}.arg",
+        # saf file
+        saf="dosaf/{sample}.saf.gz",
+        # pos file
+        pos="dosaf/{sample}.saf.pos.gz",        
+        # saf index
+        safidx="dosaf/{sample}.saf.idx" # saf index
+    log:
+        "logs/angsd_dosaf/{sample}.log"
+    params:
+        # Estimate genotype likelihoods
+        gl="1", # 1 samtools, 2 gatk        
+        # optional parameters
+        extra=""
+    threads: 10
+    wrapper:
+        "file:///mnt/f/pipeline/snakemake-wrappers/bio/angsd/angsd_dosaf"

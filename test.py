@@ -1900,3 +1900,9 @@ def test_mapdamage():
         "bio/mapdamage",
         ["snakemake", "--cores", "1", "result", "--use-conda", "-F"],
     )
+
+def test_angsd_dosaf():
+    run(
+        "bio/angsd/angsd_dosaf",
+        ["snakemake", "--cores", "1", "dosaf/pop1.saf.gz", "--use-conda", "-F"],
+    )
