@@ -1898,5 +1898,5 @@ def test_vep_annotate():
 def test_mapdamage():
     run(
         "bio/mapdamage",
-        ["snakemake", "--cores", "1", "a.bcf.csi", "--use-conda", "-F"],
+        ["snakemake", "--cores", "1", "result", "--use-conda", "-F"],
     )
