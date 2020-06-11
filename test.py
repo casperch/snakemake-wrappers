@@ -1906,3 +1906,9 @@ def test_angsd_dosaf():
         "bio/angsd/angsd_dosaf",
         ["snakemake", "--cores", "1", "dosaf/pop1.saf.gz", "--use-conda", "-F"],
     )
+
+def test_jellyfish_histo():
+    run(
+        "bio/jellyfish/count_histo",
+        ["snakemake", "--cores", "1", "reads.histo", "--use-conda", "-F"],
+    )
