@@ -1,0 +1,18 @@
+rule realSFS:
+    input:
+        # sfs idx
+        idx1='pop1.saf.idx',
+        idx2='pop2.saf.idx',
+        saf1='pop1.saf.gz',
+        saf2='pop2.saf.gz',
+        pos1='pop1.saf.pos.gz',
+        pos2='pop2.saf.pos.gz'
+    output:
+        # ml file
+        'pop1.pop2.ml'
+    log:
+        "logs/realSFS/realSFS.log"
+    params:
+        extra=""
+    wrapper:
+        "file:///mnt/f/pipeline/snakemake-wrappers/bio/angsd/realSFS"
