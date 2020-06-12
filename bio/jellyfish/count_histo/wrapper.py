@@ -18,7 +18,7 @@ inputExt = os.path.splitext(snakemake.input[0])[1]
 
 if inputExt == '.gz':
     shell(
-        "jellyfish count -C -m {merlen} -s {hashsize} -t {snakemake.threads} -o reads.jf < $(zcat {snakemake.input}) {log}"
+        "zcat {snakemake.input} | jellyfish count -C -m {merlen} -s {hashsize} -t {snakemake.threads} -o reads.jf /dev/fd/0 {log}"
     )
 else:
     shell(
