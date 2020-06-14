@@ -1,4 +1,5 @@
 docs/wrappers
+docs/_build
 __pycache__
 .snakemake
 .DS_Store
