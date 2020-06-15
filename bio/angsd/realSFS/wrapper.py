@@ -11,8 +11,8 @@ extra = snakemake.params.get("extra", "")
 log = snakemake.log_fmt_shell(stdout=False, stderr=True)
 
 shell(
-    "realSFS "   
+    "realSFS "
     "{snakemake.input.idx1} {snakemake.input.idx2} "
-    "{extra} > {snakemake.output}"    
+    "{extra} > {snakemake.output}"
     "{log}"
 )

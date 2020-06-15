@@ -17,13 +17,13 @@ if ancestral_genome:
 else:
     ref_cmd = ""
 
-dosaf = snakemake.params.get('dosaf')
+dosaf = snakemake.params.get("dosaf")
 if dosaf:
     dosaf_cmd = "-dosaf " + dosaf
 else:
     dosaf_cmd = ""
 
-gl = snakemake.params.get('gl')
+gl = snakemake.params.get("gl")
 if gl:
     gl_cmd = "-gl " + gl
 else:
@@ -37,7 +37,7 @@ else:
     thread_cmd = ""
 
 shell(
-    "angsd "   
+    "angsd "
     "-b {snakemake.input.bamlist} "
     "-anc {snakemake.input.ancestral} "
     "-out {outprefix} "

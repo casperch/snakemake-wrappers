@@ -16,7 +16,7 @@ hashsize = snakemake.params.get("hashsize", "100M")
 inputExt = os.path.splitext(snakemake.input[0])[1]
 
 
-if inputExt == '.gz':
+if inputExt == ".gz":
     shell(
         "zcat {snakemake.input} | jellyfish count -C -m {merlen} -s {hashsize} -t {snakemake.threads} -o reads.jf /dev/fd/0 {log}"
     )
@@ -25,6 +25,4 @@ else:
         "jellyfish count -C -m {merlen} -s {hashsize} -t {snakemake.threads} {snakemake.input} -o reads.jf {log}"
     )
 
-shell(
-    "jellyfish histo -t {snakemake.threads} reads.jf > {snakemake.output} {log}"
-)
+shell("jellyfish histo -t {snakemake.threads} reads.jf > {snakemake.output} {log}")

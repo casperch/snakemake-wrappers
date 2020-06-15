@@ -7,7 +7,11 @@ __license__ = "MIT"
 from snakemake.shell import shell
 
 ## Extract arguments
-outdir = snakemake.output[0] if snakemake.output[0] else 'result'
+outdir = snakemake.output[0] if snakemake.output[0] else "result"
 extra = snakemake.params.get("extra", "")
 
-shell("mapDamage " " {extra}" " -i {snakemake.input.bam} -r {snakemake.input.ref} -d {outdir}")
+shell(
+    "mapDamage "
+    " {extra}"
+    " -i {snakemake.input.bam} -r {snakemake.input.ref} -d {outdir}"
+)

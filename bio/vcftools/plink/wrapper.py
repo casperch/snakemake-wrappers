@@ -21,8 +21,8 @@ shell(
     "vcftools "
     "{input_flag} "
     "{snakemake.input} "
-    "{extra} " 
-    "--plink "    
+    "{extra} "
+    "--plink "
     "--out {output} "
     "{log}"
 )
