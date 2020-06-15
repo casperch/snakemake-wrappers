@@ -1912,3 +1912,9 @@ def test_jellyfish_histo():
         "bio/jellyfish/count_histo",
         ["snakemake", "--cores", "1", "reads.histo", "--use-conda", "-F"],
     )
+
+def test_racon():
+    run(
+        "bio/racon",
+        ["snakemake", "--cores", "1", "out/racon_consensus.fa", "--use-conda", "-F"],
+    )    
