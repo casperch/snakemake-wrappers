@@ -1,0 +1,21 @@
+rule run_racon:
+    input:
+        sequences="sample_data/sample_reads.fastq.gz",
+        overlaps="sample_data/sample_overlaps.paf.gz",
+        target_sequences="sample_data/sample_reference.fasta.gz"
+    output:
+        "out/racon_consensus.fa",
+    log:
+        "logs/racon.log"
+    threads: 8
+    params:        
+        match = 8,
+        mismatch = -6,
+        gap = -8,
+        window_length = 500,
+        # optional parameters
+        extra="" 
+    wrapper:
+        "https://raw.githubusercontent.com/casperch/snakemake-wrappers/master/bio/racon"
+
+

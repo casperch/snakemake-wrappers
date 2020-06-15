@@ -1,0 +1,11 @@
+name: racon
+description: |
+Consensus module for raw de novo DNA assembly of long uncorrected reads with racon 
+authors:
+  - Jae-Pil Choi
+input:
+  - read fast[q|a]
+  - overlaps
+  - assembly fasta
+output:
+  - Consensus fasta
