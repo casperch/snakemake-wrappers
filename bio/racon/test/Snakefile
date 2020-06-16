@@ -10,7 +10,7 @@ rule run_racon:
     threads: 8
     params:        
         match = 8,
-        mismatch = -6,
+        missmatch = -6,
         gap = -8,
         window_length = 500,
         # optional parameters
