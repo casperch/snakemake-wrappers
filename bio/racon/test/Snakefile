@@ -2,7 +2,7 @@ rule run_racon:
     input:
         sequences="sample_data/sample_reads.fastq.gz",
         overlaps="sample_data/sample_overlaps.paf.gz",
-        target_sequences="sample_data/sample_reference.fasta.gz"
+        target_sequences="sample_data/sample_layout.fasta.gz"
     output:
         "out/racon_consensus.fa",
     log:
