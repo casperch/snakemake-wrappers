@@ -1,0 +1,26 @@
+import os
+
+rule medaka_consensus:
+    input:
+        basecalls = "sample_reads.fastq.gz",
+        draft_assembly = "sample_layout.fasta.gz"
+    output:
+        consensus = 'medaka_consensus/consensus.fasta' # fix filename change dirname
+    log:
+        "logs/racon.log"
+    threads: 8
+    params:
+        """"
+        models
+        medaka tools list\_models
+        Available: r103_min_high_g345, r103_min_high_g360, r103_prom_high_g360, r103_prom_snp_g3210, r103_prom_variant_g3210, r10_min_high_g303, r10_min_high_g340, r941_min_fast_g303, r941_min_high_g303, r941_min_high_g330, r941_min_high_g340_rle, r941_min_high_g344, r941_min_high_g351, r941_min_high_g360, r941_prom_fast_g303, r941_prom_high_g303, r941_prom_high_g330, r941_prom_high_g344, r941_prom_high_g360, r941_prom_snp_g303, r941_prom_snp_g322, r941_prom_snp_g360, r941_prom_variant_g303, r941_prom_variant_g322, r941_prom_variant_g360
+        Default consensus:  r941_min_high_g360
+        Default snp:  r941_prom_snp_g360
+        Default variant:  r941_prom_variant_g360
+        """"
+        model = "r941_min_high_g360",
+        output_dir = lambda w, output: os.path.dirname(output.consensus),
+        # optional parameters
+        extra=""
+    wrapper:
+        "https://raw.githubusercontent.com/casperch/snakemake-wrappers/master/bio/medaka/consensus"

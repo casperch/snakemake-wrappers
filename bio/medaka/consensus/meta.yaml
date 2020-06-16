@@ -1,0 +1,10 @@
+name: medaka
+description: |
+Create a consensus sequence from nanopore sequencing data with medaka consensus
+authors:
+  - Jae-Pil Choi
+input:
+  - read fast[q|a]
+  - assembly fasta
+output:
+  - Consensus fasta
