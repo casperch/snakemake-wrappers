@@ -22,5 +22,5 @@ shell(
     " -g {gap} "
     " -w {window_length} "
     " {extra} "
-    "{snakemake.input.sequences} {snakemake.input.overlaps} {snamemake.input.target_sequences} > {snakemake.output} {log}"
+    "{snakemake.input.sequences} {snakemake.input.overlaps} {snakemake.input.target_sequences} > {snakemake.output} {log}"
 )
