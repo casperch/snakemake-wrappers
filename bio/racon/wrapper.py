@@ -11,7 +11,7 @@ from os import path
 log = snakemake.log_fmt_shell(stdout=True, stderr=True)
 extra = snakemake.params.get("extra", "")
 match = snakemake.params.get("match", 8)
-mismatch = snakemake.params.get("missmatch", -6)
+missmatch = snakemake.params.get("missmatch", -6)
 gap = snakemake.params.get("gap", -8)
 window_length = snakemake.params.get("window_length", -8)
 
