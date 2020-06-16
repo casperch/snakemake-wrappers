@@ -3,11 +3,11 @@ import os
 rule medaka_consensus:
     input:
         basecalls = "sample_reads.fastq.gz",
-        draft_assembly = "sample_layout.fasta.gz"
+        draft_assembly = "sample_layout.fasta.gz" # if compress file with bgzip
     output:
         consensus = 'medaka_consensus/consensus.fasta' # fix filename change dirname
     log:
-        "logs/racon.log"
+        "logs/medaka_consensus.log"
     threads: 8
     params:
         """"
