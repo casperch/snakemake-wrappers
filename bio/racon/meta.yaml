@@ -1,6 +1,5 @@
 name: racon
-description: |
-Consensus module for raw de novo DNA assembly of long uncorrected reads with racon 
+description: Consensus module for raw de novo DNA assembly of long uncorrected reads with racon
 authors:
   - Jae-Pil Choi
 input:
