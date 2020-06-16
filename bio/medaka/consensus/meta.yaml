@@ -1,6 +1,5 @@
 name: medaka
-description: |
-Create a consensus sequence from nanopore sequencing data with medaka consensus
+description: Create a consensus sequence from nanopore sequencing data with medaka consensus
 authors:
   - Jae-Pil Choi
 input:
