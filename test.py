@@ -1918,3 +1918,9 @@ def test_racon():
         "bio/racon",
         ["snakemake", "--cores", "1", "out/racon_consensus.fa", "--use-conda", "-F"],
     )    
+
+def test_nanoplot():
+    run(
+        "bio/nanoplot",
+        ["snakemake", "--cores", "1", "nanoplot/NanoStats.txt", "--use-conda", "-F"],
+    )        

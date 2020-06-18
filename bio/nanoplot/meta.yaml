@@ -1,0 +1,10 @@
+name: nanoplot
+description: Plotting tool for long read sequencing data and alignments.
+authors:
+  - Jae-Pil Choi
+input:
+  - long read fast[a|q]
+output:
+  - a statistical summary
+  - a number of plots
+  - a html summary file

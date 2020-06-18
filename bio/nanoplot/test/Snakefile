@@ -1,0 +1,13 @@
+rule nanoplot:
+    input:
+        fastq="sample_reads.fastq.gz"
+    output:
+        "nanoplot/NanoStats.txt" # NanoStats.txt fixed name set outdir
+    log:
+        "logs/nanoplot/nanoplot.log"
+    threads: 8
+    params:
+        # optional parameters
+        extra="" 
+    wrapper:
+        "https://raw.githubusercontent.com/casperch/snakemake-wrappers/master/bio/nanoplot"
