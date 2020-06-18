@@ -9,6 +9,7 @@ rule run_busco:
     params:
         mode="transcriptome",
         lineage_path="sample_data/example",
+        plot=True,        
         # optional parameters
         extra="" 
     wrapper:

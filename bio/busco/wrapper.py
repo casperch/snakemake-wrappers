@@ -14,6 +14,7 @@ mode = snakemake.params.get("mode")
 assert mode is not None, "please input a run mode: genome, transcriptome or proteins"
 lineage = snakemake.params.get("lineage_path")
 assert lineage is not None, "please input the path to a lineage for busco assessment"
+plot = snakemake.params.get("plot", False)
 
 # busco does not allow you to direct output location: handle this by moving output
 outdir = path.dirname(snakemake.output[0])
@@ -35,3 +36,8 @@ busco_outname = "run_" + out_name
 # move to intended location
 shell("cp -r {busco_outname}/* {outdir}")
 shell("rm -rf {busco_outname}")
+
+if plot:
+    shell(
+        "generate_plot -wd {out_name} {log}"
+    )
