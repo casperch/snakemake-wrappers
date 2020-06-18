@@ -1,0 +1,8 @@
+name: wtdbg2
+description: Wtdbg2 is a de novo sequence assembler for long noisy reads produced by PacBio or Oxford Nanopore Technologies (ONT).
+authors:
+  - Jae-Pil Choi
+input:
+  - long read fast[a|q]
+output:
+  - consensus contig fa

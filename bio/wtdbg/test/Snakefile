@@ -1,0 +1,15 @@
+rule wtdbg2:
+    input:
+        fastq="sample_reads.fastq.gz"
+    output:
+        "output/sample.ctg.lay.fa" # . split[0] prefix
+    log:
+        "logs/wtdbg2/wtdbg2.log"
+    threads: 8
+    params:
+        genome_size="4.6m",
+        preset="ont",
+        # optional parameters
+        extra="" 
+    wrapper:
+        "https://raw.githubusercontent.com/casperch/snakemake-wrappers/master/bio/wtdbg"
