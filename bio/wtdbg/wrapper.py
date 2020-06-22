@@ -20,5 +20,8 @@ prefix = snakemake.output[0].split('.')[0]
 if preset:
     param_preset = "-x " + preset
 
-shell("wtdbg2 {param_preset} -g {genome_size} -t {snakemake.threads} -i {snakemake.input} -o {prefix} {log}")
-shell("wtpoa-cns -t {snakemake.threads} -i {prefix}.ctg.lay.gz -o {snakemake.output} {log}")
+shell(    
+    "(wtdbg2 {param_preset} -g {genome_size} -t {snakemake.threads} -i {snakemake.input} -o {prefix};"
+    "wtpoa-cns -t {snakemake.threads} -i {prefix}.ctg.lay.gz -o {snakemake.output}) {log}" 
+)
+
