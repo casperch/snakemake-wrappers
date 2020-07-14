@@ -1,0 +1,4 @@
+name: "BBSplit"
+description: Maps reads to multiple references simultaneously.
+authors:
+  - Jae-Pil Choi

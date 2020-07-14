@@ -1,0 +1,14 @@
+rule tadpole:
+    input:
+        r1="{sample}.1.fq.gz",
+        r2="{sample}.2.fq.gz",
+    output:
+        r1="{sample}.ec.1.fq.gz",
+        r2="{sample}.ec.2.fq.gz",
+    log:
+        "logs/tadpole/{sample}.log"
+    params:
+        mode="correct",
+        extra=""
+    wrapper:
+        "https://raw.githubusercontent.com/casperch/snakemake-wrappers/master/bio/bbmap/tadpole"

@@ -1,0 +1,4 @@
+name: "tadpole"
+description: Tadpole is a kmer-based assembler, with additional capabilities of error-correcting and extending reads. It does not do any complicated graph analysis or scaffolding, and therefore, is not particularly good for diploid organisms. However, compared to most other assemblers, it is incredibly fast, has a very low misassembly rate, and is very adept at handling extremely irregular or super high coverage distributions. It does not have any annoying side-effects of generating temp files and directories. Also, it can selectively assemble a coverage ‘band’ from a dataset (for example, just areas with a depth between 1000x and 1500x). These features make it a good choice for microbial single-cell data, viruses, organelles, and preliminary assemblies for use in binning, quality recalibration, insert-size estimation, and so forth. Tadpole has no upper limit on kmer length.
+authors:
+  - Jae-Pil Choi
