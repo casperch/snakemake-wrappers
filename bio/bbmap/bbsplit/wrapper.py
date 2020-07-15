@@ -13,6 +13,6 @@ shell(
     "ref={snakemake.input.ref} "
     "in1={snakemake.input.r1} in2={snakemake.input.r2} "
     "out1={snakemake.output.r1} out2={snakemake.output.r2} "
-    "basename=${snakemake.wildcards.sample}_%.fq "
+    "basename={snakemake.wildcards.sample}_%.fq "
     "{extra}) {log}"
 )
